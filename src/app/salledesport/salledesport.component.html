@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th><th>Catégorie</th>  </tr>
+    <tbody *ngFor="let salledesport of salledesport">
+    <tr >
+    <td>{{salledesport.idsalledesport}}</td>
+    <td>{{salledesport.nomsalledesport}}</td>
+    <td>{{salledesport.capacitesalledesport}}</td>
+    <td>{{salledesport.dateCreation | date:'dd/MM/yyyy'}}</td>
+    <td>{{salledesport.categorie.nomCat}}</td>
+    <td><a class="btn btn-danger" (click)="supprimersalledesport(salledesport)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updatesalledesport',salledesport.idsalledesport]">Modifier</a></td>
+
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
